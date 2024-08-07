@@ -4,14 +4,14 @@ from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 
 from cars.serializers import AutoSerializer
-from cars.filters import PriceRangeFilter
+from cars.filters import PriceRangeFilter, MileageRangeFilter
 from cars.models import Auto
 
 
 class AutoViewSet(ModelViewSet):
     queryset = Auto.objects.all()
     serializer_class = AutoSerializer
-    filter_backends = [DjangoFilterBackend, PriceRangeFilter]
+    filter_backends = [DjangoFilterBackend, PriceRangeFilter, MileageRangeFilter]
     filterset_fields = ["model", "fuel", "transmission", "name", "year",  "mileage", "price"]
 
     def retrieve(self, request, pk=None):

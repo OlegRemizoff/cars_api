@@ -14,3 +14,18 @@ class PriceRangeFilter(filters.BaseFilterBackend):
             return queryset.filter(price__lte=max_price)
 
         return queryset
+
+
+class MileageRangeFilter(filters.BaseFilterBackend):
+    def filter_queryset(self, request, queryset, view):
+        min_mileage = request.query_params.get('min_mileage')
+        max_mileage = request.query_params.get('max_mileage')
+
+        if min_mileage and max_mileage:
+            return queryset.filter(mileage__range=(min_mileage, max_mileage))
+        elif min_mileage:
+            return queryset.filter(mileage__gte=min_mileage)
+        elif max_mileage:
+            return queryset.filter(mileage__lte=max_mileage)
+
+        return queryset
