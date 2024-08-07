@@ -48,7 +48,7 @@
 
 
 
-# Установка
+## Установка
 
 ### 1) Создать и активировать виртуальное окружение
     python -m venv venv 
@@ -67,7 +67,7 @@
 
     python manage.py createsuperuser
 
-# Старт
+## Старт
 
     python manage.py runserver
 
