@@ -82,6 +82,11 @@
 <img src="cars_list.png">
 </p>
 
+### Исправленный список
+<p align="center">
+<img src="corrected_cars.png">
+</p>
+
 ### Получение автомобиля по ID.
 - URL: `http://127.0.0.1:8000/cars/id`
 - Метод: GET
